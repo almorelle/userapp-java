@@ -10,16 +10,26 @@ If you don't have a UserApp account, you need to [create one](https://app.userap
 
 *  **Token**: A token authenticates a user on your app. If you want to create a token for your logged in user, [follow this guide](https://help.userapp.io/customer/portal/articles/1364103-how-do-i-create-an-api-token-). If you want to authenticate using a username/password, you can acquire your token by calling `api.method("user.login").parameter("login", "username").parameter("password", "password").call();`
 
+### Installing the library
+Depend on the ***UserApp library*** using your favorite dependency management tool:
+```
+<dependency>
+    <groupId>io.userapp</groupId>
+    <artifactId>userapp-java</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+Otherwise, add the following libraries to your classpath:
+* UserApp.io ([userapp.jar](https://github.com/userapp-io/userapp-java/raw/master/bin/userapp-java-1.0.0.jar))
+* JSON.org ([json.jar](http://search.maven.org/#search|gav|1|g%3A%22org.json%22%20AND%20a%3A%22json%22))
+
 ### Referencing the library
 
-Add the [.jar file](https://github.com/userapp-io/userapp-java/raw/master/bin/userapp-java-1.0.0.jar) to your libraries and import it with the following lines:
-
+Import it with the following lines:
+```
     import io.userapp.client.UserApp;
     import io.userapp.client.exceptions.*;
-
-### Download and add the org.json library to your project
-
-[org.json](http://mvnrepository.com/artifact/org.json/json) (put it in the same folder as the userapp-java jar).
+```
 
 ### Creating your first client
  
