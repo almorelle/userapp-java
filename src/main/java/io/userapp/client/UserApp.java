@@ -10,6 +10,7 @@ import io.userapp.client.rest.RestfulContext;
 import io.userapp.client.rest.UserCredentials;
 import io.userapp.client.rest.core.HttpResponse;
 
+import java.lang.String;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,24 +24,60 @@ public class UserApp {
 	
 	/* Configuration object */
 	public static class ClientOptions {
-		public int version = 1;
-		public String appId = null;
-		public String token = null;
-		public boolean debug = false;
-		public boolean secure = true;
-		public String baseAddress = "api.userapp.io";
-		public boolean throwErrors = true;
+		private int version = 1;
+        	private String appId = null;
+        	private String token = null;
+		private boolean debug = false;
+        	private boolean secure = true;
+        	private String baseAddress = "api.userapp.io";
+        	private boolean throwErrors = true;
 		
 		public ClientOptions() {}
 		
 		public ClientOptions(String appId) {
 			this(appId, null);
 		}
-		
-		public ClientOptions(String appId, String token) {
-			this.appId = appId;
-			this.token = token;
-		}
+
+	        public ClientOptions(String appId, String token) {
+	            	this.appId = appId;
+	            	this.token = token;
+	        }
+	
+	        public ClientOptions(String appId, String token, String baseAddress, boolean secure, int version) {
+	            	this.appId = appId;
+	            	this.token = token;
+	            	this.baseAddress = baseAddress;
+	            	this.secure = secure;
+	            	this.version = version;
+	        }
+	
+	        public String getAppId() {
+	            	return appId;
+	        }
+	
+	        public String getToken() {
+	            	return token;
+	        }
+	
+	        public int getVersion() {
+	            	return version;
+	        }
+	
+	        public boolean isSecure() {
+	            	return secure;
+	        }
+	
+	        public String getBaseAddress() {
+	            	return baseAddress;
+	        }
+	
+	        public void setDebug(boolean debug) {
+	            	this.debug = debug;
+	        }
+	
+	        public void setThrowErrors(boolean throwErrors) {
+	            	this.throwErrors = throwErrors;
+	        }
 	}
 	
 	/* Representation of an input parameter */
